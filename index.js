@@ -178,8 +178,27 @@ class Instructor extends Lambdasian {
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
 
-class Student {
-   
+class Student extends Lambdasian {
+   constructor(obj) {
+    super(obj);
+    this.previousBackground = obj.previousBackground;
+    this.className = obj.className;
+    this.favSubjects = obj.favSubjects;
+   }
+
+   listSubjects() {
+    const subjects = this.favSubjects.join(', ')
+
+    return `Loving ${subjects}!`;
+   }
+
+   PRAssignment(subject) {
+    return `${this.name} has submitted a PR for ${subject}`
+   }
+
+   sprintChallenge(subject) {
+    return `${this.name} has began sprint challenge on ${subject}`
+   }
 }
 
 /*
